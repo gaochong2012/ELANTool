@@ -13,38 +13,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5f4a243-aff6-4d26-aba4-0f4c9968fff6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ListThread.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ListThread.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/MainWindow.cpp.o" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/GCArp.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/GCArp.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/WorkerThread.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/WorkerThread.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/main.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/GCIP.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/GCIP.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/GCSQLite.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/GCSQLite.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ELANTool" afterPath="$PROJECT_DIR$/cmake-build-debug/ELANTool" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GCArp.cpp" afterPath="$PROJECT_DIR$/GCArp.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GCArp.h" afterPath="$PROJECT_DIR$/GCArp.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GCIP.cpp" afterPath="$PROJECT_DIR$/GCIP.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GCSQLite.cpp" afterPath="$PROJECT_DIR$/GCSQLite.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainWindow.cpp" afterPath="$PROJECT_DIR$/MainWindow.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MainWindow.h" afterPath="$PROJECT_DIR$/MainWindow.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WorkerThread.cpp" afterPath="$PROJECT_DIR$/WorkerThread.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/cmake_clean.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool_autogen.dir/AutogenInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool_autogen.dir/AutogenInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool_autogen.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ELANTool_autogen.dir/progress.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ELANTool.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/ELANTool.cbp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ELANTool_autogen/EWIEGA46WW/moc_MainWindow.cpp" afterPath="$PROJECT_DIR$/cmake-build-debug/ELANTool_autogen/EWIEGA46WW/moc_MainWindow.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ELANTool_autogen/moc_compilation.cpp" afterPath="$PROJECT_DIR$/cmake-build-debug/ELANTool_autogen/moc_compilation.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,13 +47,23 @@
       <file leaf-file-name="MainWindow.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MainWindow.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+            <state relative-caret-position="368">
+              <caret line="186" column="22" lean-forward="false" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
               <folding>
                 <element signature="e#43#66#0" expanded="true" />
                 <element signature="e#304#325#0" expanded="true" />
-                <element signature="e#2567#4513#0" expanded="false" />
+                <element signature="e#2565#4511#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GCSQLite.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GCSQLite.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="81" column="23" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +81,8 @@
       <file leaf-file-name="ListThread.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ListThread.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="50" column="70" lean-forward="false" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+            <state relative-caret-position="278">
+              <caret line="50" column="72" lean-forward="false" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="72" />
               <folding>
                 <element signature="e#43#66#0" expanded="true" />
               </folding>
@@ -108,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/GCArp.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="305">
-              <caret line="267" column="41" lean-forward="true" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
+              <caret line="267" column="41" lean-forward="false" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
               <folding>
                 <element signature="e#759#805#0" expanded="true" />
               </folding>
@@ -143,18 +129,8 @@
       <file leaf-file-name="GCIP.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCIP.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="74" column="36" lean-forward="false" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LanIPTable.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LanIPTable.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            <state relative-caret-position="494">
+              <caret line="87" column="25" lean-forward="true" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -163,8 +139,8 @@
       <file leaf-file-name="MainWindow.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainWindow.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="494">
+              <caret line="53" column="12" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
               <folding>
                 <element signature="e#104#126#0" expanded="true" />
               </folding>
@@ -199,7 +175,6 @@
         <option value="$PROJECT_DIR$/GCIP.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/QCTools.h" />
-        <option value="$PROJECT_DIR$/GCSQLite.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/QCTools.cpp" />
         <option value="$PROJECT_DIR$/cmake-build-debug/WorkerThread.h" />
@@ -213,6 +188,7 @@
         <option value="$PROJECT_DIR$/GCArp.cpp" />
         <option value="$PROJECT_DIR$/GCArp.h" />
         <option value="$PROJECT_DIR$/ListThread.cpp" />
+        <option value="$PROJECT_DIR$/GCSQLite.cpp" />
         <option value="$PROJECT_DIR$/GCIP.cpp" />
         <option value="$PROJECT_DIR$/MainWindow.h" />
         <option value="$PROJECT_DIR$/MainWindow.cpp" />
@@ -226,7 +202,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="796" />
     <option name="height" value="1037" />
   </component>
@@ -312,12 +288,12 @@
       <workItem from="1511513481851" duration="142000" />
       <workItem from="1511513853979" duration="4301000" />
       <workItem from="1511742837560" duration="33875000" />
-      <workItem from="1511829384751" duration="13152000" />
+      <workItem from="1511829384751" duration="15410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72824000" />
+    <option name="totallyTimeSpent" value="75082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,7 +305,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1037" extended-state="7" />
+    <frame x="0" y="0" width="1920" height="1037" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32581738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -423,7 +399,7 @@
           <folding>
             <element signature="e#43#66#0" expanded="true" />
             <element signature="e#304#325#0" expanded="true" />
-            <element signature="e#2567#4513#0" expanded="false" />
+            <element signature="e#2565#4511#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -486,7 +462,7 @@
           <folding>
             <element signature="e#43#66#0" expanded="true" />
             <element signature="e#304#325#0" expanded="true" />
-            <element signature="e#2567#4513#0" expanded="false" />
+            <element signature="e#2565#4511#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -585,13 +561,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCSQLite.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="61" column="18" lean-forward="false" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -715,7 +685,7 @@
     <entry file="file://$PROJECT_DIR$/GCArp.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
-          <caret line="267" column="41" lean-forward="true" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
+          <caret line="267" column="41" lean-forward="false" selection-start-line="267" selection-start-column="41" selection-end-line="267" selection-end-column="41" />
           <folding>
             <element signature="e#759#805#0" expanded="true" />
           </folding>
@@ -732,24 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ListThread.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="50" column="70" lean-forward="false" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
-          <folding>
-            <element signature="e#43#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GCIP.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="74" column="36" lean-forward="false" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstatusbar.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -758,10 +710,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GCSQLite.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="81" column="23" lean-forward="false" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ListThread.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="50" column="72" lean-forward="false" selection-start-line="50" selection-start-column="72" selection-end-line="50" selection-end-column="72" />
+          <folding>
+            <element signature="e#43#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GCIP.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="87" column="25" lean-forward="true" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MainWindow.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="494">
+          <caret line="53" column="12" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
           <folding>
             <element signature="e#104#126#0" expanded="true" />
           </folding>
@@ -770,12 +748,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MainWindow.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+        <state relative-caret-position="368">
+          <caret line="186" column="22" lean-forward="false" selection-start-line="186" selection-start-column="22" selection-end-line="186" selection-end-column="22" />
           <folding>
             <element signature="e#43#66#0" expanded="true" />
             <element signature="e#304#325#0" expanded="true" />
-            <element signature="e#2567#4513#0" expanded="false" />
+            <element signature="e#2565#4511#0" expanded="false" />
           </folding>
         </state>
       </provider>

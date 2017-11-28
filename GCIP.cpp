@@ -62,7 +62,7 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
     InitNetBiosNs(&nbns);
 
-    char *hostname;
+    char *hostname = "";
 
     int errorcode = sendto(server_sockfd, (char *) &nbns, sizeof(nbns), 0, (struct sockaddr *) &SrvAddr,
                            sizeof(SrvAddr));
@@ -79,13 +79,13 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
     struct timeval tv_out;
     tv_out.tv_sec = 0;    //超时
-    tv_out.tv_usec = 100;
+    tv_out.tv_usec = 250;
 
     setsockopt(server_sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv_out, sizeof(tv_out));
 
     if (errorcode = recvfrom(server_sockfd, recvBuf, sizeof(recvBuf), 0, (struct sockaddr *) &SrvAddr, &destlen) < 1) {
 
-        hostname = NULL;
+        hostname = "NOT";
         printf("recvfrom Error: %d\n", errorcode);
 
     } else {

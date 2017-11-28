@@ -73,7 +73,7 @@ MainWindow::MainWindow() {
    label3 = new QLabel;
    bottomLayout->addWidget( label1 );
    bottomLayout->addWidget( label2 );
-   //bottomLayout->addWidget( label3 );
+   bottomLayout->addWidget( label3 );
    bottomLayout->addStretch();
    label1->setText( "探测IP: " );
 
@@ -181,9 +181,10 @@ void MainWindow::TestLan2(){
         QMessageBox::information( this, "提醒" ,"输入的IP地址有误，请填写正确的IP");
         return;
     }
-
-
+    label2->setText("");
+    label3->setText("");
     this->ktCount = 0;
+    this->okCount = 0;
     this->lanIPTable->ClearAllItem();
     progressbar->setValue( 0 );
 
@@ -222,8 +223,9 @@ void MainWindow::TestLan2(){
         qDebug() << "Thread Over:" << this->ktCount;
         progressbar->setValue(  ktCount * 100 / count  );
         label2->setText( nip );
-        if(  count  == ktCount -1 ){
+        if(  count  == ktCount-1  ){
             label2->setText( "结束" );
+            label3->setText( "共探测到 "+ QString::number( okCount ) +" 台设备" );
         }
     });
 
@@ -246,7 +248,7 @@ void MainWindow::AppendItem( LanTableRecord* ltRecord  ){
 void MainWindow::OnNotify(LanTableRecord *ltRecord) {
 
     qDebug()  << " ==========================> "  << ltRecord->HOSTNAME;
-
+    ++okCount;
     ltRecord->Organization = oui->FindMADI( ltRecord->MAC.left(8).replace(":","-") );
     AppendItem( ltRecord );
 }

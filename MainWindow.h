@@ -31,7 +31,7 @@ protected:
 private:
 
     int  ktCount = 0;
-
+    int  okCount = 0;
     GCSQLite     *oui;
 
     QPushButton  *testButton1;

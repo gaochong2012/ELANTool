@@ -61,7 +61,7 @@ void GCSQLite::initDBTable(){
 
 QString GCSQLite::FindMADI( QString MAC ){
 
-    QString Organization;
+    QString Organization = "NOT";
     QSqlQuery query( m_dbconn );
 
     QString sql = "select * from oui where mac = '"+ MAC +"'";
