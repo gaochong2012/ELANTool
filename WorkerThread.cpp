@@ -38,7 +38,7 @@ void WorkerThread::run() {
         QString DesMAC = QCTools::PCharToQString(  mac );
         ltRecord->MAC = DesMAC;
         ltRecord->Organization = "";
-        ltRecord->HOSTNAME = QCTools::PCharToQString( testip->IPGetPCName( this->tLanNet->DIP ) );
+        ltRecord->HOSTNAME = "";//QCTools::PCharToQString( testip->IPGetPCName( this->tLanNet->DIP ) );
         /** 向主线程发送消息 ( 探测结果　)*/
         emit notify( ltRecord );
     }

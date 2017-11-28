@@ -14,7 +14,7 @@
 #include <QVariant>
 //#include <QOverload>
 #include <QStatusBar>
-#include <QLabel>
+
 #include <QProgressBar>
 #include "GCArp.h"
 #include "GCIP.h"
@@ -22,6 +22,7 @@
 
 #include "GCSQLite.h"
 #include "WorkerThread.h"
+#include "ListThread.h"
 
 
 MainWindow::MainWindow() {
@@ -46,29 +47,46 @@ MainWindow::MainWindow() {
    lanIPTable = new LanIPTable(  tableHand );
    centerLayout->addWidget( lanIPTable );
 
-   testButton1 =  new QPushButton("测试");
+   testButton2 =  new QPushButton("列队测试");
+   testButton1 =  new QPushButton("极速测试");
    nicList    = new QComboBox;
    sIPEdit =  new QLineEdit;
    dIPEdit =  new QLineEdit;
    initValue();
+
+
 
    QHBoxLayout *topLayout =  new QHBoxLayout;
    topWidget->setLayout( topLayout );
    topLayout->addWidget( nicList );
    topLayout->addWidget( sIPEdit );
    topLayout->addWidget( dIPEdit );
-   topLayout->addWidget( testButton1 );
+   //topLayout->addWidget( testButton1 );
+   topLayout->addWidget( testButton2 );
    topLayout->addStretch();
 
+
+   QHBoxLayout *bottomLayout =  new QHBoxLayout;
+   bottomWidget->setLayout( bottomLayout );
+   label1 = new QLabel;
+   label2 = new QLabel;
+   label3 = new QLabel;
+   bottomLayout->addWidget( label1 );
+   bottomLayout->addWidget( label2 );
+   //bottomLayout->addWidget( label3 );
+   bottomLayout->addStretch();
+   label1->setText( "探测IP: " );
+
    progressbar = new QProgressBar;
-   statusBar()->addWidget( progressbar, 100 );
+   statusBar()->addWidget( progressbar,100 );
+
 
    oui = new GCSQLite("MACDB2.db");
 
-
    setWindowTitle( "以太网活动机器探测" );
    //qRegisterMetaType<QList<QPersistentModelIndex> > ("QList<QPersistentModelIndex>");
-   connect( testButton1,&QPushButton::clicked,this,&MainWindow::TestLan  );
+   //connect( testButton1,&QPushButton::clicked,this,&MainWindow::TestLan  );
+   connect( testButton2,&QPushButton::clicked,this,&MainWindow::TestLan2  );
 
 
 }
@@ -155,10 +173,17 @@ void MainWindow::initValue(){
 
 }
 
-void MainWindow::TestLan(){
+void MainWindow::TestLan2(){
+
+
+    if ( ! isInputIP( sIPEdit->text() ) ||  ! isInputIP( dIPEdit->text() ) ) {
+
+        QMessageBox::information( this, "提醒" ,"输入的IP地址有误，请填写正确的IP");
+        return;
+    }
+
 
     this->ktCount = 0;
-
     this->lanIPTable->ClearAllItem();
     progressbar->setValue( 0 );
 
@@ -175,43 +200,36 @@ void MainWindow::TestLan(){
     /** 地址段总数　*/
     int count = testIP->IP2Count( sip_pchar ,dip_pchar  );
 
-    /** 目标 IP */
-    char nip[20];  memset( dip_pchar,0 ,20 );
-    strcpy( nip ,sip_pchar );
+    /** 准备参数　*/
+    struct TLanNetList *tlanNetList = new TLanNetList;
+    memset( tlanNetList,0 , sizeof( TLanNetList ) );
+    strcpy( tlanNetList->Local   , QCTools::QStringTOpchar( nicList->currentText() ) );
+    strcpy( tlanNetList->LocalIP , QCTools::QStringTOpchar( nicList->currentData().toString() ) );
+    strcpy( tlanNetList->SIP ,sip_pchar );
+    strcpy( tlanNetList->DIP ,dip_pchar );
+
+    /** 创建一个新的线程　*/
+    ListThread *listThread =  new ListThread( tlanNetList  );
+    listThread->start();
+
+    /** 监听线程发送　notify　消息，由主线程更新主界面*/
+    connect( listThread ,SIGNAL( notify(LanTableRecord *) ),this,SLOT( OnNotify(LanTableRecord *) ) );
 
 
-    for(  int i = 0 ; i <= count ; i ++ ){
+    connect( listThread, &ListThread::notifyNextIP ,this,[=](QString nip){
 
-        /** 准备参数　*/
-        struct TLanNet *tLanNet = new TLanNet;
-        memset( tLanNet,0 , sizeof( TLanNet ) );
-        strcpy( tLanNet->Local   , QCTools::QStringTOpchar( nicList->currentText() ) );
-        strcpy( tLanNet->LocalIP , QCTools::QStringTOpchar( nicList->currentData().toString() ) );
-        strcpy( tLanNet->DIP ,nip );
+        this->ktCount++;
+        qDebug() << "Thread Over:" << this->ktCount;
+        progressbar->setValue(  ktCount * 100 / count  );
+        label2->setText( nip );
+        if(  count  == ktCount -1 ){
+            label2->setText( "结束" );
+        }
+    });
 
-        /** 创建一个新的线程　*/
-        WorkerThread *mThread =  new WorkerThread( this,tLanNet  );
-        mThread->start();
-
-
-        /** 取下一个目标ip */
-        strcpy( nip ,testIP->NextIPaddress( nip ) );
-
-        /** 监听线程发送　notify　消息，由主线程更新主界面*/
-        connect( mThread ,SIGNAL( notify(LanTableRecord *) ),this,SLOT( OnNotify(LanTableRecord *) ) );
-
-        connect( mThread, &WorkerThread::finished ,this,[=](void){
-
-            this->ktCount++;
-            qDebug() << "Thread Over:" << this->ktCount;
-            progressbar->setValue(  ktCount * 100 / count  );
-            if(  count  == ktCount -1 ){
-                //progressbar->setValue(  ktCount * 100 / count  );
-            }
-        });
-    }
 
 }
+
 
 void MainWindow::AppendItem( LanTableRecord* ltRecord  ){
 
@@ -225,10 +243,6 @@ void MainWindow::AppendItem( LanTableRecord* ltRecord  ){
 }
 
 
-void MainWindow::Test(){
-
-}
-
 void MainWindow::OnNotify(LanTableRecord *ltRecord) {
 
     qDebug()  << " ==========================> "  << ltRecord->HOSTNAME;
@@ -238,3 +252,14 @@ void MainWindow::OnNotify(LanTableRecord *ltRecord) {
 }
 
 
+bool MainWindow::isInputIP(  QString IPStr ){
+
+    QRegExp regExp("\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b");
+
+    if( !regExp.exactMatch( IPStr ) ) {
+        return false;
+    }
+    return true;
+
+
+}

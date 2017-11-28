@@ -13,6 +13,7 @@
 #include <QProgressBar>
 #include <QLineEdit>
 #include <QComboBox>
+#include <QLabel>
 
 class MainWindow :public QMainWindow{
 
@@ -34,20 +35,28 @@ private:
     GCSQLite     *oui;
 
     QPushButton  *testButton1;
+    QPushButton  *testButton2;
     QComboBox    *nicList;
     QLineEdit    *sIPEdit;
     QLineEdit    *dIPEdit;
-    LanIPTable  *lanIPTable;
+    LanIPTable   *lanIPTable;
     QProgressBar *progressbar;
+    QLabel       *label1;
+    QLabel       *label2;
+    QLabel       *label3;
     void AppendItem(LanTableRecord* ltRecord);
+    bool isInputIP(QString IPStr);
 
 private slots:
 
-    void Test();
     void initValue();
-    void TestLan();
 
     void OnNotify( LanTableRecord *ltRecord  );
+
+
+    void TestLan2();
+
+
 };
 
 

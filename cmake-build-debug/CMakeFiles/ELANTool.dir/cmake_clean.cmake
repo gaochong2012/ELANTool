@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ELANTool.dir/GCIP.cpp.o"
   "CMakeFiles/ELANTool.dir/GCSQLite.cpp.o"
   "CMakeFiles/ELANTool.dir/WorkerThread.cpp.o"
+  "CMakeFiles/ELANTool.dir/ListThread.cpp.o"
   "CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o"
   "ELANTool.pdb"
   "ELANTool"

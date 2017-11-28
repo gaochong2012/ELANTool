@@ -154,6 +154,12 @@
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/LanIPTable.h">
 			<Option target="ELANTool"/>
 		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/ListThread.cpp">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/ListThread.h">
+			<Option target="ELANTool"/>
+		</Unit>
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/MainWindow.cpp">
 			<Option target="ELANTool"/>
 		</Unit>

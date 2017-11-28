@@ -5,14 +5,6 @@
 #ifndef ELANTOOL_GCARP_H
 #define ELANTOOL_GCARP_H
 
-#define DEBUG	/* show debug info only */
-#if defined(DEBUG)
-#define wenxy_debug(fmt, args...) \
-	printf(fmt, ##args)
-#else
-#define wenxy_debug(fmt, ...)
-#endif
-
 #include <unistd.h>
 #include <memory.h>
 #include <stdio.h>
@@ -38,17 +30,11 @@
 
 #define MAX_BUF_LEN 128
 
-/*
-#define SRC_IP   "10.0.1.77"   // 源IP
-#define DES_IP   "10.0.1.35"   // 目的IP
-#define LOCAL_HW        "00:C0:4C:39:0D:6F" // 10.0.1.77的eth0的MAC
-#define DEVICE          "eth0"    // 接口
-*/
 #define PADD_MAC  "00:00:00:00:00:00" 	// 填充的MAC
 #define DES_MAC   "FF:FF:FF:FF:FF:FF" 	// 广播MAC
-#define ARP_SEND_COUNT 3				// 发送ARP请求的ARP包的个数
-#define RX_ARP_COUNT 3					// rx count of ARP response
-#define SLEEP_MAX_US (1000 * 100)		/* unit microsecond */
+#define ARP_SEND_COUNT   1				// 发送ARP请求的ARP包的个数
+#define RX_ARP_COUNT 1					// rx count of ARP response
+#define SLEEP_MAX_US ( 1000 )		    /* unit microsecond */
 
 struct ether_header
 {

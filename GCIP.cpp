@@ -78,8 +78,8 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
 
     struct timeval tv_out;
-    tv_out.tv_sec = 5;//5 秒超时
-    tv_out.tv_usec = 0;
+    tv_out.tv_sec = 0;    //超时
+    tv_out.tv_usec = 100;
 
     setsockopt(server_sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv_out, sizeof(tv_out));
 
