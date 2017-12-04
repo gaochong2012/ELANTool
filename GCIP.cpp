@@ -48,14 +48,14 @@ char *GCIP::IPToMAC(char *IpAddStr) {
 
 }
 
-char *GCIP::IPGetPCName(const char *ipAdd) {
+char *GCIP::IPGetPCName( const char *ipAdd ){
 
     int server_sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 
     struct sockaddr_in SrvAddr;
-    memset(&SrvAddr, 0, sizeof(SrvAddr));
+    memset( &SrvAddr, 0, sizeof(SrvAddr) );
     SrvAddr.sin_addr.s_addr = inet_addr(ipAdd);
-    SrvAddr.sin_port = htons(137);
+    SrvAddr.sin_port = htons( 137 );
     SrvAddr.sin_family = AF_INET;
 
     TNetBiosNS nbns;
@@ -64,8 +64,7 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
     char *hostname = "";
 
-    int errorcode = sendto(server_sockfd, (char *) &nbns, sizeof(nbns), 0, (struct sockaddr *) &SrvAddr,
-                           sizeof(SrvAddr));
+    int errorcode = sendto(server_sockfd, (char *) &nbns, sizeof(nbns), 0, (struct sockaddr *) &SrvAddr, sizeof(SrvAddr));
 
     printf("sendto Error : %d\n", errorcode);
 
@@ -73,7 +72,7 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
     char recvBuf[512];
     //memset(recvBuf,0,sizeof(recvBuf)*sizeof(char));
-    bzero(recvBuf, sizeof(recvBuf));
+    bzero( recvBuf, sizeof(recvBuf) );
     socklen_t destlen = sizeof(SrvAddr);
 
 
@@ -83,7 +82,7 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
     setsockopt(server_sockfd, SOL_SOCKET, SO_RCVTIMEO, &tv_out, sizeof(tv_out));
 
-    if (errorcode = recvfrom(server_sockfd, recvBuf, sizeof(recvBuf), 0, (struct sockaddr *) &SrvAddr, &destlen) < 1) {
+    if ( errorcode = recvfrom(server_sockfd, recvBuf, sizeof(recvBuf), 0, (struct sockaddr *) &SrvAddr, &destlen) < 1 ){
 
         hostname = "NOT";
         printf("recvfrom Error: %d\n", errorcode);
@@ -92,12 +91,11 @@ char *GCIP::IPGetPCName(const char *ipAdd) {
 
         for (int i = 57; i < 57 + 18; i++) {
 
-            if (recvBuf[i] < 0x20)
-
-                recvBuf[i] = 0;
+            if (recvBuf[i] < 0x20) recvBuf[i] = '\0';
         }
 
         hostname = &recvBuf[57];
+
         printf("recvfrom :%s\n", hostname);
     }
 

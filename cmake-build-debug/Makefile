@@ -271,32 +271,59 @@ GCSQLite.cpp.s:
 	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/GCSQLite.cpp.s
 .PHONY : GCSQLite.cpp.s
 
-LanIPTable.o: LanIPTable.cpp.o
+GCSocketPortTest.o: GCSocketPortTest.cpp.o
 
-.PHONY : LanIPTable.o
+.PHONY : GCSocketPortTest.o
 
 # target to build an object file
-LanIPTable.cpp.o:
-	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPTable.cpp.o
-.PHONY : LanIPTable.cpp.o
+GCSocketPortTest.cpp.o:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o
+.PHONY : GCSocketPortTest.cpp.o
 
-LanIPTable.i: LanIPTable.cpp.i
+GCSocketPortTest.i: GCSocketPortTest.cpp.i
 
-.PHONY : LanIPTable.i
+.PHONY : GCSocketPortTest.i
 
 # target to preprocess a source file
-LanIPTable.cpp.i:
-	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPTable.cpp.i
-.PHONY : LanIPTable.cpp.i
+GCSocketPortTest.cpp.i:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.i
+.PHONY : GCSocketPortTest.cpp.i
 
-LanIPTable.s: LanIPTable.cpp.s
+GCSocketPortTest.s: GCSocketPortTest.cpp.s
 
-.PHONY : LanIPTable.s
+.PHONY : GCSocketPortTest.s
 
 # target to generate assembly for a file
-LanIPTable.cpp.s:
-	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPTable.cpp.s
-.PHONY : LanIPTable.cpp.s
+GCSocketPortTest.cpp.s:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.s
+.PHONY : GCSocketPortTest.cpp.s
+
+LanIPListView.o: LanIPListView.cpp.o
+
+.PHONY : LanIPListView.o
+
+# target to build an object file
+LanIPListView.cpp.o:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPListView.cpp.o
+.PHONY : LanIPListView.cpp.o
+
+LanIPListView.i: LanIPListView.cpp.i
+
+.PHONY : LanIPListView.i
+
+# target to preprocess a source file
+LanIPListView.cpp.i:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPListView.cpp.i
+.PHONY : LanIPListView.cpp.i
+
+LanIPListView.s: LanIPListView.cpp.s
+
+.PHONY : LanIPListView.s
+
+# target to generate assembly for a file
+LanIPListView.cpp.s:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPListView.cpp.s
+.PHONY : LanIPListView.cpp.s
 
 ListThread.o: ListThread.cpp.o
 
@@ -351,6 +378,114 @@ MainWindow.s: MainWindow.cpp.s
 MainWindow.cpp.s:
 	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/MainWindow.cpp.s
 .PHONY : MainWindow.cpp.s
+
+PortListView.o: PortListView.cpp.o
+
+.PHONY : PortListView.o
+
+# target to build an object file
+PortListView.cpp.o:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListView.cpp.o
+.PHONY : PortListView.cpp.o
+
+PortListView.i: PortListView.cpp.i
+
+.PHONY : PortListView.i
+
+# target to preprocess a source file
+PortListView.cpp.i:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListView.cpp.i
+.PHONY : PortListView.cpp.i
+
+PortListView.s: PortListView.cpp.s
+
+.PHONY : PortListView.s
+
+# target to generate assembly for a file
+PortListView.cpp.s:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListView.cpp.s
+.PHONY : PortListView.cpp.s
+
+PortListViewAll.o: PortListViewAll.cpp.o
+
+.PHONY : PortListViewAll.o
+
+# target to build an object file
+PortListViewAll.cpp.o:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o
+.PHONY : PortListViewAll.cpp.o
+
+PortListViewAll.i: PortListViewAll.cpp.i
+
+.PHONY : PortListViewAll.i
+
+# target to preprocess a source file
+PortListViewAll.cpp.i:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListViewAll.cpp.i
+.PHONY : PortListViewAll.cpp.i
+
+PortListViewAll.s: PortListViewAll.cpp.s
+
+.PHONY : PortListViewAll.s
+
+# target to generate assembly for a file
+PortListViewAll.cpp.s:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListViewAll.cpp.s
+.PHONY : PortListViewAll.cpp.s
+
+PortTableDlg.o: PortTableDlg.cpp.o
+
+.PHONY : PortTableDlg.o
+
+# target to build an object file
+PortTableDlg.cpp.o:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o
+.PHONY : PortTableDlg.cpp.o
+
+PortTableDlg.i: PortTableDlg.cpp.i
+
+.PHONY : PortTableDlg.i
+
+# target to preprocess a source file
+PortTableDlg.cpp.i:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTableDlg.cpp.i
+.PHONY : PortTableDlg.cpp.i
+
+PortTableDlg.s: PortTableDlg.cpp.s
+
+.PHONY : PortTableDlg.s
+
+# target to generate assembly for a file
+PortTableDlg.cpp.s:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTableDlg.cpp.s
+.PHONY : PortTableDlg.cpp.s
+
+PortTestThread.o: PortTestThread.cpp.o
+
+.PHONY : PortTestThread.o
+
+# target to build an object file
+PortTestThread.cpp.o:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTestThread.cpp.o
+.PHONY : PortTestThread.cpp.o
+
+PortTestThread.i: PortTestThread.cpp.i
+
+.PHONY : PortTestThread.i
+
+# target to preprocess a source file
+PortTestThread.cpp.i:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTestThread.cpp.i
+.PHONY : PortTestThread.cpp.i
+
+PortTestThread.s: PortTestThread.cpp.s
+
+.PHONY : PortTestThread.s
+
+# target to generate assembly for a file
+PortTestThread.cpp.s:
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTestThread.cpp.s
+.PHONY : PortTestThread.cpp.s
 
 QCTools.o: QCTools.cpp.o
 
@@ -458,15 +593,30 @@ help:
 	@echo "... GCSQLite.o"
 	@echo "... GCSQLite.i"
 	@echo "... GCSQLite.s"
-	@echo "... LanIPTable.o"
-	@echo "... LanIPTable.i"
-	@echo "... LanIPTable.s"
+	@echo "... GCSocketPortTest.o"
+	@echo "... GCSocketPortTest.i"
+	@echo "... GCSocketPortTest.s"
+	@echo "... LanIPListView.o"
+	@echo "... LanIPListView.i"
+	@echo "... LanIPListView.s"
 	@echo "... ListThread.o"
 	@echo "... ListThread.i"
 	@echo "... ListThread.s"
 	@echo "... MainWindow.o"
 	@echo "... MainWindow.i"
 	@echo "... MainWindow.s"
+	@echo "... PortListView.o"
+	@echo "... PortListView.i"
+	@echo "... PortListView.s"
+	@echo "... PortListViewAll.o"
+	@echo "... PortListViewAll.i"
+	@echo "... PortListViewAll.s"
+	@echo "... PortTableDlg.o"
+	@echo "... PortTableDlg.i"
+	@echo "... PortTableDlg.s"
+	@echo "... PortTestThread.o"
+	@echo "... PortTestThread.i"
+	@echo "... PortTestThread.s"
 	@echo "... QCTools.o"
 	@echo "... QCTools.i"
 	@echo "... QCTools.s"

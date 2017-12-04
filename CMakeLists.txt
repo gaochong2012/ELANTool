@@ -3,7 +3,7 @@ project(ELANTool)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD 11)
-set(SOURCE_FILES main.cpp MainWindow.cpp MainWindow.h GCListView.cpp GCListView.h LanIPTable.cpp LanIPTable.h GCArp.cpp GCArp.h QCTools.cpp QCTools.h GCIP.cpp GCIP.h GCSQLite.cpp GCSQLite.h WorkerThread.cpp WorkerThread.h TableRecord.h ListThread.cpp ListThread.h)
+set(SOURCE_FILES main.cpp MainWindow.cpp MainWindow.h GCListView.cpp GCListView.h LanIPListView.cpp LanIPListView.h GCArp.cpp GCArp.h QCTools.cpp QCTools.h GCIP.cpp GCIP.h GCSQLite.cpp GCSQLite.h WorkerThread.cpp WorkerThread.h TableRecord.h ListThread.cpp ListThread.h PortListView.cpp PortListView.h GCSocketPortTest.cpp GCSocketPortTest.h PortTestThread.cpp PortTestThread.h PortTableDlg.cpp PortTableDlg.h PortListViewAll.cpp PortListViewAll.h SStruct.h)
 add_executable(ELANTool ${SOURCE_FILES})
 
 #

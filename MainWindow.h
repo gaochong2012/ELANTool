@@ -6,9 +6,10 @@
 #define ELANTOOL_MAINWINDOW_H
 
 #include <QMainWindow>
-#include "LanIPTable.h"
+#include "LanIPListView.h"
 #include "TableRecord.h"
 #include "GCSQLite.h"
+#include "PortListView.h"
 #include <QPushButton>
 #include <QProgressBar>
 #include <QLineEdit>
@@ -40,23 +41,49 @@ private:
     QLineEdit    *sIPEdit;
     QLineEdit    *dIPEdit;
     LanIPTable   *lanIPTable;
+    PortListView *portListView;
     QProgressBar *progressbar;
     QLabel       *label1;
     QLabel       *label2;
     QLabel       *label3;
+    QComboBox    *srCount;
+    QComboBox    *outTime;
+    QLabel       *portTestLabel;
+    QPushButton  *testPortBtn;
+
     void AppendItem(LanTableRecord* ltRecord);
     bool isInputIP(QString IPStr);
 
-private slots:
+    QString           MMIP;
+    QList<PortData>   SSPort;
+
+private:
+    bool  findON  = true;     //是否通过 MAC 查找厂商
+
+    int srCount_i  = 1;
+    int outTime_i  = 250;
 
     void initValue();
 
-    void OnNotify( LanTableRecord *ltRecord  );
+public:
+    QList<PortData> getSSPort();
+    void setSSPort( QList<PortData> SSPort );
 
+private slots:
+
+
+
+    void OnNotify( LanTableRecord *ltRecord  );
+    void OnNotifyPortTest( int port , int type );
 
     void TestLan2();
+    void TestPort();
+
+    void PortListViewItemDBClick(QModelIndex modelIndex);
+    void LanIPTableItemDBClick(QModelIndex modelIndex);
 
 
+    void PortSetup();
 };
 
 

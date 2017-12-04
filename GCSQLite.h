@@ -8,9 +8,7 @@
 #include <QString>
 #include <QList>
 #include <QtSql/QSqlDatabase>
-
-
-
+#include "SStruct.h"
 
 
 class GCSQLite {
@@ -22,11 +20,15 @@ public:
 
 
     QString FindMADI(QString MAC);
+    QList<PortData> ReadALLPort();
+
+    virtual ~GCSQLite();
 
 private:
     QSqlDatabase m_dbconn;
 
     void initDBTable();
+
 
 };
 

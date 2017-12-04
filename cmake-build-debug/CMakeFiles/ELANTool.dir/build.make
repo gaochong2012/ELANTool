@@ -129,28 +129,28 @@ CMakeFiles/ELANTool.dir/GCListView.cpp.o.provides: CMakeFiles/ELANTool.dir/GCLis
 CMakeFiles/ELANTool.dir/GCListView.cpp.o.provides.build: CMakeFiles/ELANTool.dir/GCListView.cpp.o
 
 
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.o: CMakeFiles/ELANTool.dir/flags.make
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.o: ../LanIPTable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ELANTool.dir/LanIPTable.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/LanIPTable.cpp.o -c /home/gaochong/GC_DDD/ELANTool/LanIPTable.cpp
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.o: CMakeFiles/ELANTool.dir/flags.make
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.o: ../LanIPListView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ELANTool.dir/LanIPListView.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/LanIPListView.cpp.o -c /home/gaochong/GC_DDD/ELANTool/LanIPListView.cpp
 
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/LanIPTable.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/LanIPTable.cpp > CMakeFiles/ELANTool.dir/LanIPTable.cpp.i
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/LanIPListView.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/LanIPListView.cpp > CMakeFiles/ELANTool.dir/LanIPListView.cpp.i
 
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/LanIPTable.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/LanIPTable.cpp -o CMakeFiles/ELANTool.dir/LanIPTable.cpp.s
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/LanIPListView.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/LanIPListView.cpp -o CMakeFiles/ELANTool.dir/LanIPListView.cpp.s
 
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.requires:
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.requires:
 
-.PHONY : CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.requires
+.PHONY : CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.requires
 
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.provides: CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.requires
-	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.provides.build
-.PHONY : CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.provides
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.provides: CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.provides.build
+.PHONY : CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.provides
 
-CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.provides.build: CMakeFiles/ELANTool.dir/LanIPTable.cpp.o
+CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.provides.build: CMakeFiles/ELANTool.dir/LanIPListView.cpp.o
 
 
 CMakeFiles/ELANTool.dir/GCArp.cpp.o: CMakeFiles/ELANTool.dir/flags.make
@@ -297,9 +297,129 @@ CMakeFiles/ELANTool.dir/ListThread.cpp.o.provides: CMakeFiles/ELANTool.dir/ListT
 CMakeFiles/ELANTool.dir/ListThread.cpp.o.provides.build: CMakeFiles/ELANTool.dir/ListThread.cpp.o
 
 
+CMakeFiles/ELANTool.dir/PortListView.cpp.o: CMakeFiles/ELANTool.dir/flags.make
+CMakeFiles/ELANTool.dir/PortListView.cpp.o: ../PortListView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ELANTool.dir/PortListView.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/PortListView.cpp.o -c /home/gaochong/GC_DDD/ELANTool/PortListView.cpp
+
+CMakeFiles/ELANTool.dir/PortListView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/PortListView.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/PortListView.cpp > CMakeFiles/ELANTool.dir/PortListView.cpp.i
+
+CMakeFiles/ELANTool.dir/PortListView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/PortListView.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/PortListView.cpp -o CMakeFiles/ELANTool.dir/PortListView.cpp.s
+
+CMakeFiles/ELANTool.dir/PortListView.cpp.o.requires:
+
+.PHONY : CMakeFiles/ELANTool.dir/PortListView.cpp.o.requires
+
+CMakeFiles/ELANTool.dir/PortListView.cpp.o.provides: CMakeFiles/ELANTool.dir/PortListView.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListView.cpp.o.provides.build
+.PHONY : CMakeFiles/ELANTool.dir/PortListView.cpp.o.provides
+
+CMakeFiles/ELANTool.dir/PortListView.cpp.o.provides.build: CMakeFiles/ELANTool.dir/PortListView.cpp.o
+
+
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o: CMakeFiles/ELANTool.dir/flags.make
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o: ../GCSocketPortTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o -c /home/gaochong/GC_DDD/ELANTool/GCSocketPortTest.cpp
+
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/GCSocketPortTest.cpp > CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.i
+
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/GCSocketPortTest.cpp -o CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.s
+
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.requires:
+
+.PHONY : CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.requires
+
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.provides: CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.provides.build
+.PHONY : CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.provides
+
+CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.provides.build: CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o
+
+
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.o: CMakeFiles/ELANTool.dir/flags.make
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.o: ../PortTestThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ELANTool.dir/PortTestThread.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/PortTestThread.cpp.o -c /home/gaochong/GC_DDD/ELANTool/PortTestThread.cpp
+
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/PortTestThread.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/PortTestThread.cpp > CMakeFiles/ELANTool.dir/PortTestThread.cpp.i
+
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/PortTestThread.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/PortTestThread.cpp -o CMakeFiles/ELANTool.dir/PortTestThread.cpp.s
+
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.requires:
+
+.PHONY : CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.requires
+
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.provides: CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.provides.build
+.PHONY : CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.provides
+
+CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.provides.build: CMakeFiles/ELANTool.dir/PortTestThread.cpp.o
+
+
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o: CMakeFiles/ELANTool.dir/flags.make
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o: ../PortTableDlg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o -c /home/gaochong/GC_DDD/ELANTool/PortTableDlg.cpp
+
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/PortTableDlg.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/PortTableDlg.cpp > CMakeFiles/ELANTool.dir/PortTableDlg.cpp.i
+
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/PortTableDlg.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/PortTableDlg.cpp -o CMakeFiles/ELANTool.dir/PortTableDlg.cpp.s
+
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.requires:
+
+.PHONY : CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.requires
+
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.provides: CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.provides.build
+.PHONY : CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.provides
+
+CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.provides.build: CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o
+
+
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o: CMakeFiles/ELANTool.dir/flags.make
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o: ../PortListViewAll.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o -c /home/gaochong/GC_DDD/ELANTool/PortListViewAll.cpp
+
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ELANTool.dir/PortListViewAll.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaochong/GC_DDD/ELANTool/PortListViewAll.cpp > CMakeFiles/ELANTool.dir/PortListViewAll.cpp.i
+
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ELANTool.dir/PortListViewAll.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaochong/GC_DDD/ELANTool/PortListViewAll.cpp -o CMakeFiles/ELANTool.dir/PortListViewAll.cpp.s
+
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.requires:
+
+.PHONY : CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.requires
+
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.provides: CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ELANTool.dir/build.make CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.provides.build
+.PHONY : CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.provides
+
+CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.provides.build: CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o
+
+
 CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o: CMakeFiles/ELANTool.dir/flags.make
 CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o: ELANTool_autogen/moc_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o -c /home/gaochong/GC_DDD/ELANTool/cmake-build-debug/ELANTool_autogen/moc_compilation.cpp
 
 CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.i: cmake_force
@@ -326,13 +446,18 @@ ELANTool_OBJECTS = \
 "CMakeFiles/ELANTool.dir/main.cpp.o" \
 "CMakeFiles/ELANTool.dir/MainWindow.cpp.o" \
 "CMakeFiles/ELANTool.dir/GCListView.cpp.o" \
-"CMakeFiles/ELANTool.dir/LanIPTable.cpp.o" \
+"CMakeFiles/ELANTool.dir/LanIPListView.cpp.o" \
 "CMakeFiles/ELANTool.dir/GCArp.cpp.o" \
 "CMakeFiles/ELANTool.dir/QCTools.cpp.o" \
 "CMakeFiles/ELANTool.dir/GCIP.cpp.o" \
 "CMakeFiles/ELANTool.dir/GCSQLite.cpp.o" \
 "CMakeFiles/ELANTool.dir/WorkerThread.cpp.o" \
 "CMakeFiles/ELANTool.dir/ListThread.cpp.o" \
+"CMakeFiles/ELANTool.dir/PortListView.cpp.o" \
+"CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o" \
+"CMakeFiles/ELANTool.dir/PortTestThread.cpp.o" \
+"CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o" \
+"CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o" \
 "CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o"
 
 # External object files for target ELANTool
@@ -341,13 +466,18 @@ ELANTool_EXTERNAL_OBJECTS =
 ELANTool: CMakeFiles/ELANTool.dir/main.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/MainWindow.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/GCListView.cpp.o
-ELANTool: CMakeFiles/ELANTool.dir/LanIPTable.cpp.o
+ELANTool: CMakeFiles/ELANTool.dir/LanIPListView.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/GCArp.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/QCTools.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/GCIP.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/GCSQLite.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/WorkerThread.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/ListThread.cpp.o
+ELANTool: CMakeFiles/ELANTool.dir/PortListView.cpp.o
+ELANTool: CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o
+ELANTool: CMakeFiles/ELANTool.dir/PortTestThread.cpp.o
+ELANTool: CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o
+ELANTool: CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o
 ELANTool: CMakeFiles/ELANTool.dir/build.make
 ELANTool: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.6.1
@@ -356,7 +486,7 @@ ELANTool: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.6.1
 ELANTool: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.6.1
 ELANTool: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.6.1
 ELANTool: CMakeFiles/ELANTool.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ELANTool"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable ELANTool"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ELANTool.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -367,13 +497,18 @@ CMakeFiles/ELANTool.dir/build: ELANTool
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/main.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/MainWindow.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/GCListView.cpp.o.requires
-CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/LanIPTable.cpp.o.requires
+CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/LanIPListView.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/GCArp.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/QCTools.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/GCIP.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/GCSQLite.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/WorkerThread.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/ListThread.cpp.o.requires
+CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/PortListView.cpp.o.requires
+CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/GCSocketPortTest.cpp.o.requires
+CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/PortTestThread.cpp.o.requires
+CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/PortTableDlg.cpp.o.requires
+CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/PortListViewAll.cpp.o.requires
 CMakeFiles/ELANTool.dir/requires: CMakeFiles/ELANTool.dir/ELANTool_autogen/moc_compilation.cpp.o.requires
 
 .PHONY : CMakeFiles/ELANTool.dir/requires

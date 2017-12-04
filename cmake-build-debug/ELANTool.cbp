@@ -148,10 +148,16 @@
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/GCSQLite.h">
 			<Option target="ELANTool"/>
 		</Unit>
-		<Unit filename="/home/gaochong/GC_DDD/ELANTool/LanIPTable.cpp">
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/GCSocketPortTest.cpp">
 			<Option target="ELANTool"/>
 		</Unit>
-		<Unit filename="/home/gaochong/GC_DDD/ELANTool/LanIPTable.h">
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/GCSocketPortTest.h">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/LanIPListView.cpp">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/LanIPListView.h">
 			<Option target="ELANTool"/>
 		</Unit>
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/ListThread.cpp">
@@ -166,10 +172,37 @@
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/MainWindow.h">
 			<Option target="ELANTool"/>
 		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortListView.cpp">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortListView.h">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortListViewAll.cpp">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortListViewAll.h">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortTableDlg.cpp">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortTableDlg.h">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortTestThread.cpp">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/PortTestThread.h">
+			<Option target="ELANTool"/>
+		</Unit>
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/QCTools.cpp">
 			<Option target="ELANTool"/>
 		</Unit>
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/QCTools.h">
+			<Option target="ELANTool"/>
+		</Unit>
+		<Unit filename="/home/gaochong/GC_DDD/ELANTool/SStruct.h">
 			<Option target="ELANTool"/>
 		</Unit>
 		<Unit filename="/home/gaochong/GC_DDD/ELANTool/TableRecord.h">

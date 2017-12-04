@@ -16,6 +16,7 @@
 #include <QStatusBar>
 
 #include <QProgressBar>
+#include <QtCore/QFile>
 #include "GCArp.h"
 #include "GCIP.h"
 #include "QCTools.h"
@@ -23,7 +24,11 @@
 #include "GCSQLite.h"
 #include "WorkerThread.h"
 #include "ListThread.h"
+#include "PortListView.h"
+#include "PortTestThread.h"
+#include "PortTableDlg.h"
 
+#define    DBNAME        "macport.db"
 
 MainWindow::MainWindow() {
 
@@ -40,27 +45,63 @@ MainWindow::MainWindow() {
    mainlayout->addWidget( centerWidget );
    mainlayout->addWidget( bottomWidget );
 
-   QVBoxLayout *centerLayout = new QVBoxLayout;
+   QHBoxLayout *centerLayout = new QHBoxLayout;
    centerWidget->setLayout( centerLayout );
+
+   QVBoxLayout *leftLayout = new QVBoxLayout;
    QStringList tableHand;
    tableHand << "IP" << "MAC" << "HOSTNAME" << "Organization";
    lanIPTable = new LanIPTable(  tableHand );
-   centerLayout->addWidget( lanIPTable );
+   leftLayout->addWidget( lanIPTable );
+
+   QVBoxLayout *rightLayout = new QVBoxLayout;
+   QStringList tableHand2;
+   tableHand2 << "Port" << "OPEN";
+   portListView = new PortListView(  tableHand2 );
+   portListView->setFixedWidth( 250 );
+   portListView->setColumnWidth( 0,80 );
+   portTestLabel = new QLabel("IP：");
+   testPortBtn =  new QPushButton("端口探测");
+   QPushButton *portSetupBtn = new QPushButton("端口探测配置");
+
+   rightLayout->addWidget( portListView );
+   rightLayout->addWidget( portTestLabel );
+   rightLayout->addWidget( testPortBtn );
+   rightLayout->addWidget( portSetupBtn );
+
+   centerLayout->addLayout( leftLayout );
+   centerLayout->addLayout( rightLayout );
 
    testButton2 =  new QPushButton("列队测试");
-   testButton1 =  new QPushButton("极速测试");
-   nicList    = new QComboBox;
-   sIPEdit =  new QLineEdit;
-   dIPEdit =  new QLineEdit;
-   initValue();
+   testButton2->setFixedWidth( 150 );
+   //testButton1 =  new QPushButton("极速测试");
 
+   nicList    = new QComboBox;
+   QLabel *SIPLabel = new QLabel(  "启始IP:" );
+   sIPEdit =  new QLineEdit;
+   sIPEdit->setFixedWidth( 120 );
+   QLabel *EIPLabel = new QLabel(  "结止IP:" );
+   dIPEdit =  new QLineEdit;
+   dIPEdit->setFixedWidth( 120 );
+   QLabel *srnLabel = new QLabel(  "重试:" );
+   srCount = new QComboBox;
+   QLabel *otLabel = new QLabel(  "超时:" );
+   outTime = new QComboBox;
+   initValue();
 
 
    QHBoxLayout *topLayout =  new QHBoxLayout;
    topWidget->setLayout( topLayout );
    topLayout->addWidget( nicList );
+   topLayout->addWidget( SIPLabel );
    topLayout->addWidget( sIPEdit );
+   topLayout->addWidget( EIPLabel );
    topLayout->addWidget( dIPEdit );
+   topLayout->addWidget( srnLabel );
+   topLayout->addWidget( srCount );
+   topLayout->addWidget( otLabel );
+   topLayout->addWidget( outTime );
+
    //topLayout->addWidget( testButton1 );
    topLayout->addWidget( testButton2 );
    topLayout->addStretch();
@@ -81,12 +122,35 @@ MainWindow::MainWindow() {
    statusBar()->addWidget( progressbar,100 );
 
 
-   oui = new GCSQLite("MACDB2.db");
+    QString dbfilename = DBNAME;
+   if(  QFile::exists( dbfilename )  ){
+
+       oui = new GCSQLite(  dbfilename );
+
+
+   }else{
+       findON = false;
+
+       QMessageBox::warning( this,"提醒", "数据库文件丢失,请确认当目录下存在"+ dbfilename +" 文件,否则无法查询出设备厂商." );
+   }
 
    setWindowTitle( "以太网活动机器探测" );
-   //qRegisterMetaType<QList<QPersistentModelIndex> > ("QList<QPersistentModelIndex>");
-   //connect( testButton1,&QPushButton::clicked,this,&MainWindow::TestLan  );
+
    connect( testButton2,&QPushButton::clicked,this,&MainWindow::TestLan2  );
+
+   connect( testPortBtn,&QPushButton::clicked,this,&MainWindow::TestPort  );
+
+   connect( portSetupBtn,  &QPushButton::clicked,this,&MainWindow::PortSetup  );
+
+   connect(  lanIPTable,
+             SIGNAL(doubleClicked(QModelIndex)),
+             this,
+             SLOT( LanIPTableItemDBClick(QModelIndex)));
+
+   connect(  portListView,
+             SIGNAL(doubleClicked(QModelIndex)),
+             this,
+             SLOT( PortListViewItemDBClick(QModelIndex)));
 
 
 }
@@ -164,11 +228,38 @@ void MainWindow::initValue(){
          sIPEdit->setText( tip.mid(0 , tip.lastIndexOf(".") +1 ) + "1"  );
          dIPEdit->setText( tip.mid(0 , tip.lastIndexOf(".") +1 ) + "254"  );
 
+    });
+
+    /** 超时  */
+    outTime->addItem( "200","200" );
+    outTime->addItem( "500","500" );
+    outTime->addItem( "1000","1000" );
+    outTime->addItem( "2000","2000" );
+
+    /** 重试 */
+    srCount->addItem( "1" ,"1" );
+    srCount->addItem( "2" ,"2" );
+    srCount->addItem( "3" ,"2" );
+    srCount->addItem( "4" ,"3" );
+
+    nicList->currentIndexChanged( 0 );
+
+    connect( outTime, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[this](int index){
+
+        qDebug()<< index <<  outTime->currentData().toString();
+
+        this->outTime_i = nicList->currentData().toInt();
 
     });
 
+    connect( srCount, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[this](int index){
 
-    nicList->currentIndexChanged( 0 );
+        qDebug()<< index <<  srCount->currentData().toString();
+
+        this->srCount_i  = srCount->currentData().toInt();
+
+    });
+
 
 
 }
@@ -210,8 +301,9 @@ void MainWindow::TestLan2(){
     strcpy( tlanNetList->DIP ,dip_pchar );
 
     /** 创建一个新的线程　*/
-    ListThread *listThread =  new ListThread( tlanNetList  );
+    ListThread *listThread =  new ListThread( tlanNetList , this->srCount_i ,this->outTime_i );
     listThread->start();
+
 
     /** 监听线程发送　notify　消息，由主线程更新主界面*/
     connect( listThread ,SIGNAL( notify(LanTableRecord *) ),this,SLOT( OnNotify(LanTableRecord *) ) );
@@ -244,12 +336,32 @@ void MainWindow::AppendItem( LanTableRecord* ltRecord  ){
 
 }
 
+void MainWindow::OnNotifyPortTest( int port , int type ) {
+
+    int nRow = this->portListView->getDataModel()->rowCount();
+
+    this->portListView->getDataModel()->insertRow( nRow );
+    this->portListView->getDataModel()->setItem( nRow ,0 , new QStandardItem( QString::number( port ) ) );
+
+    if( type == 0 ){
+
+        this->portListView->getDataModel()->setItem( nRow ,1 , new QStandardItem( "开启"  ) );
+
+    }else{
+
+        this->portListView->getDataModel()->setItem( nRow ,1 , new QStandardItem(  "未启用" ) );
+    }
+
+}
 
 void MainWindow::OnNotify(LanTableRecord *ltRecord) {
 
-    qDebug()  << " ==========================> "  << ltRecord->HOSTNAME;
     ++okCount;
-    ltRecord->Organization = oui->FindMADI( ltRecord->MAC.left(8).replace(":","-") );
+    if ( findON && oui != NULL   ){
+
+        ltRecord->Organization = oui->FindMADI( ltRecord->MAC.left(8).replace( ":","-" ) );
+    }
+
     AppendItem( ltRecord );
 }
 
@@ -263,5 +375,63 @@ bool MainWindow::isInputIP(  QString IPStr ){
     }
     return true;
 
+}
 
+//
+void MainWindow::TestPort(){
+
+    if ( this->getSSPort().size() == 0   ){
+
+        QMessageBox::warning( this,"提醒","未选择需要探测的端口列表,请先行配置.");
+        return;
+    }
+
+    this->portListView->ClearAllItem();
+
+    if( this->MMIP.length() != 0 ){
+
+        qDebug()<< this->MMIP;
+        char tIP[20];
+        memset( tIP,0,sizeof( tIP )*sizeof( char ) );
+        strcpy( tIP, QCTools::QStringTOpchar( MMIP ));
+
+        PortTestThread *connectPort = new PortTestThread( tIP , this->getSSPort() );
+        connectPort->start();
+
+        connect( connectPort  ,SIGNAL( OnNotifyPortTest(int,int) ),this,SLOT( OnNotifyPortTest( int,int ) ) );
+    }
+
+}
+
+void MainWindow::PortSetup(){
+
+    PortTableDlg *psDlg =  new PortTableDlg( this );
+    psDlg->show();
+
+}
+
+
+
+void MainWindow::LanIPTableItemDBClick( QModelIndex modelIndex){
+
+    this->MMIP = modelIndex.model()->index( modelIndex.row(),0 ).data().toString().trimmed();
+    portTestLabel->setText( "IP：" + this->MMIP );
+}
+
+void MainWindow::PortListViewItemDBClick( QModelIndex modelIndex ){
+
+    //qDebug()<< modelIndex;
+
+
+}
+
+void MainWindow::setSSPort(QList<PortData> SSPort) {
+
+    this->SSPort =  SSPort;
+
+}
+
+QList<PortData> MainWindow::getSSPort() {
+
+    return QList<PortData>( this->SSPort );
 }

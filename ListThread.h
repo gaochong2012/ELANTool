@@ -28,14 +28,15 @@ class ListThread : public QThread{
 Q_OBJECT
 
 private:
-    //MainWindow* mainUI;
-    TLanNetList* tLanNetList;
 
-    //GCArp       *testarp ;
+    TLanNetList* tLanNetList;
     GCIP        *testip;
 
+    int srCount  = 1;
+    int outTime  = 250;
+
 public:
-    ListThread( TLanNetList* tLanNetList,  QObject *parent = nullptr );
+    ListThread( TLanNetList* tLanNetList, int srCount  = 1 ,int outTime  = 250, QObject *parent = nullptr );
 
     virtual ~ListThread();
 

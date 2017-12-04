@@ -54,10 +54,10 @@ GCListView::GCListView( QStringList TableHeader ) {
     //this->horizontalHeader()->setSectionResizeMode( QHeaderView::ResizeToContents );
 
     //初始列宽定义
-    this->setColumnWidth( 0 ,150 );
+    this->setColumnWidth( 0 ,200 );
     this->setColumnWidth( 1 ,200 );
-    this->setColumnWidth( 2 ,200 );
-    this->setColumnWidth( 3 ,500 );
+    this->setColumnWidth( 2 ,250 );
+    this->setColumnWidth( 3 ,1000 );
 
     //隐藏列
     //this->setColumnHidden( 5,true );
@@ -82,19 +82,19 @@ GCListView::GCListView( QStringList TableHeader ) {
 */
 
 /**
-    //单击
+
     connect( this,
              SIGNAL(clicked(QModelIndex)),
              this,
              SLOT(  Itemlick(QModelIndex) ));
 
-    //双击
+
     connect( this,
              SIGNAL(doubleClicked(QModelIndex)),
              this,
              SLOT( ItemDBClick(QModelIndex)));
-*/
 
+**/
 
 /**
      * 初始化右键菜单
