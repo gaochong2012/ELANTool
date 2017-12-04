@@ -1,4 +1,0 @@
-/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles/ELANTool.dir
-/home/gaochong/GC_DDD/ELANTool/cmake-build-debug/CMakeFiles/ELANTool_autogen.dir
