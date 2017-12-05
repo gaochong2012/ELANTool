@@ -5,14 +5,17 @@
 #include "ListThread.h"
 #include "LanIPListView.h"
 #include "QCTools.h"
+#include "GCSocketPortTest.h"
+#include <QDebug>
 
-ListThread::ListThread( TLanNetList* tLanNetList, int srCount ,int outTime ,QObject *parent ) : QThread(parent) {
+ListThread::ListThread( TLanNetList* tLanNetList, int srCount ,int outTime ,int fPort , QObject *parent ):QThread(parent) {
 
     this->tLanNetList = (TLanNetList*)malloc( sizeof( TLanNetList ) );
     memcpy( this->tLanNetList ,tLanNetList ,sizeof( TLanNetList ) );
 
     this->srCount = srCount;
     this->outTime = outTime;
+    this->fPort = fPort;
 }
 
 
@@ -28,6 +31,7 @@ void ListThread::run() {
 
     testip =  new GCIP;
 
+    GCSocketPortTest *testSocket = new GCSocketPortTest;
     /** 地址段总数　
      *  开始 IP -- 结束 IP
      * */
@@ -54,9 +58,23 @@ void ListThread::run() {
             ltRecord->Organization = "";
             ltRecord->HOSTNAME = QCTools::PCharToQString( testip->IPGetPCName( nip ) );
 
-            /**
-             * 向主线程发送消息 ( 探测结果　)*/
-            emit notify( ltRecord );
+            if( this->fPort != -9999 ){
+
+                 if(  testSocket->TestTCPConnectPort(  nip,fPort   ) == 0 ){
+
+                     qDebug() << " =============>"  << nip << ":" << fPort << " OK";
+                     /**
+                      * 向主线程发送消息 ( 探测结果　)*/
+                     emit notify( ltRecord );
+                 }
+
+            }else{
+
+                /**
+                 * 向主线程发送消息 ( 探测结果　)*/
+                emit notify( ltRecord );
+            }
+
         }
 
         /**

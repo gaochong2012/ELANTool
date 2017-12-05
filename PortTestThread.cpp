@@ -28,8 +28,6 @@ PortTestThread::~PortTestThread() {
 void PortTestThread::run() {
 
 
-
-
     foreach(  PortData  selportData , this->selport  ){
 
          GCSocketPortTest *test = new GCSocketPortTest;

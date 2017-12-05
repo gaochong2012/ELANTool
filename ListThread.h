@@ -27,6 +27,8 @@ class ListThread : public QThread{
 
 Q_OBJECT
 
+
+
 private:
 
     TLanNetList* tLanNetList;
@@ -34,9 +36,10 @@ private:
 
     int srCount  = 1;
     int outTime  = 250;
+    int fPort    = -9999;
 
 public:
-    ListThread( TLanNetList* tLanNetList, int srCount  = 1 ,int outTime  = 250, QObject *parent = nullptr );
+    ListThread( TLanNetList* tLanNetList, int srCount  = 1 ,int outTime  = 250, int fPort = -9999, QObject *parent = nullptr );
 
     virtual ~ListThread();
 

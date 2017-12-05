@@ -74,6 +74,7 @@ MainWindow::MainWindow() {
 
    testButton2 =  new QPushButton("列队测试");
    testButton2->setFixedWidth( 150 );
+
    //testButton1 =  new QPushButton("极速测试");
 
    nicList    = new QComboBox;
@@ -87,8 +88,10 @@ MainWindow::MainWindow() {
    srCount = new QComboBox;
    QLabel *otLabel = new QLabel(  "超时:" );
    outTime = new QComboBox;
-   initValue();
+   QLabel *fPortlabel = new QLabel(  "探测端口:" );
+   fPort = new QComboBox;
 
+   initValue();
 
    QHBoxLayout *topLayout =  new QHBoxLayout;
    topWidget->setLayout( topLayout );
@@ -101,8 +104,8 @@ MainWindow::MainWindow() {
    topLayout->addWidget( srCount );
    topLayout->addWidget( otLabel );
    topLayout->addWidget( outTime );
-
-   //topLayout->addWidget( testButton1 );
+   topLayout->addWidget( fPortlabel );
+   topLayout->addWidget( fPort );
    topLayout->addWidget( testButton2 );
    topLayout->addStretch();
 
@@ -122,7 +125,7 @@ MainWindow::MainWindow() {
    statusBar()->addWidget( progressbar,100 );
 
 
-    QString dbfilename = DBNAME;
+   QString dbfilename = DBNAME;
    if(  QFile::exists( dbfilename )  ){
 
        oui = new GCSQLite(  dbfilename );
@@ -173,7 +176,6 @@ void MainWindow::initValue(){
      * 读取网卡列表 ；MAC
      ===================================================================*/
     QList<QNetworkInterface> list = QNetworkInterface::allInterfaces();
-    //QHostAddress address2;
     QString newMAC = "";
     QString Address = "";
     QString Netmask = "";
@@ -184,10 +186,10 @@ void MainWindow::initValue(){
 
             continue;
         }
-
+/**
         qDebug() << "Device:"<<interface.name();
         qDebug() << "mac:"<<interface.hardwareAddress();
-
+*/
 
         newMAC = interface.hardwareAddress();
 
@@ -198,11 +200,11 @@ void MainWindow::initValue(){
             QHostAddress address2 = entry.ip();
 
             if( address2.protocol() == QAbstractSocket::IPv4Protocol ) {
-
+/**
                 qDebug()<< "IPV4 Address:" <<entry.ip().toString();
                 qDebug()<< "Netmask: "  <<entry.netmask().toString();
                 qDebug()<< "Broadcast:" <<entry.broadcast().toString();
-
+*/
                 Address = entry.ip().toString();
                 Netmask = entry.netmask().toString();
                 Broadcast = entry.broadcast().toString();
@@ -214,11 +216,8 @@ void MainWindow::initValue(){
         //break; //取出第一个网卡即可，忽略多网卡情况
     }
 
-
-
     sIPEdit =  new QLineEdit;
     dIPEdit =  new QLineEdit;
-
     connect(nicList, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[this](int index){
 
          qDebug()<< index <<  nicList->currentData().toString();
@@ -231,37 +230,48 @@ void MainWindow::initValue(){
     });
 
     /** 超时  */
+    outTime->addItem( "50","50" );
     outTime->addItem( "200","200" );
     outTime->addItem( "500","500" );
     outTime->addItem( "1000","1000" );
     outTime->addItem( "2000","2000" );
+    outTime->setCurrentIndex(1);
+    outTime->currentIndexChanged( 1 );
 
     /** 重试 */
     srCount->addItem( "1" ,"1" );
     srCount->addItem( "2" ,"2" );
     srCount->addItem( "3" ,"2" );
     srCount->addItem( "4" ,"3" );
+    srCount->setCurrentIndex(0);
+    srCount->currentIndexChanged( 0 );
 
-    nicList->currentIndexChanged( 0 );
+    fPort->addItem( "不进行" ,"-9999" );
+    fPort->addItem( "22" ,"22" );
+    fPort->addItem( "80" ,"80" );
+    fPort->addItem( "3389" ,"3389" );
+    fPort->setCurrentIndex(0);
+    fPort->currentIndexChanged( 0 );
 
+    nicList->setCurrentIndex(0);
+    nicList->currentIndexChanged(0);
+/**
     connect( outTime, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[this](int index){
 
         qDebug()<< index <<  outTime->currentData().toString();
-
-        this->outTime_i = nicList->currentData().toInt();
-
     });
 
     connect( srCount, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[this](int index){
 
         qDebug()<< index <<  srCount->currentData().toString();
-
-        this->srCount_i  = srCount->currentData().toInt();
-
     });
 
 
+    connect( fPort, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),[this](int index){
 
+        qDebug()<< index <<  fPort->currentData().toString();
+    });
+*/
 }
 
 void MainWindow::TestLan2(){
@@ -292,6 +302,11 @@ void MainWindow::TestLan2(){
     /** 地址段总数　*/
     int count = testIP->IP2Count( sip_pchar ,dip_pchar  );
 
+    int srCount_i  = srCount->currentData().toInt();
+    int outTime_i  = outTime->currentData().toInt();
+
+    int fPort_i = fPort->currentData().toInt();
+
     /** 准备参数　*/
     struct TLanNetList *tlanNetList = new TLanNetList;
     memset( tlanNetList,0 , sizeof( TLanNetList ) );
@@ -301,9 +316,8 @@ void MainWindow::TestLan2(){
     strcpy( tlanNetList->DIP ,dip_pchar );
 
     /** 创建一个新的线程　*/
-    ListThread *listThread =  new ListThread( tlanNetList , this->srCount_i ,this->outTime_i );
+    ListThread *listThread = new ListThread( tlanNetList , srCount_i , outTime_i ,fPort_i );
     listThread->start();
-
 
     /** 监听线程发送　notify　消息，由主线程更新主界面*/
     connect( listThread ,SIGNAL( notify(LanTableRecord *) ),this,SLOT( OnNotify(LanTableRecord *) ) );

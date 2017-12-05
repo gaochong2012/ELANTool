@@ -133,6 +133,10 @@ LanIPListView.h
 /home/gaochong/GC_DDD/ELANTool/LanIPListView.h
 QCTools.h
 /home/gaochong/GC_DDD/ELANTool/QCTools.h
+GCSocketPortTest.h
+/home/gaochong/GC_DDD/ELANTool/GCSocketPortTest.h
+QDebug
+-
 
 /home/gaochong/GC_DDD/ELANTool/ListThread.h
 QtCore/QThread

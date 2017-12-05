@@ -48,6 +48,8 @@ private:
     QLabel       *label3;
     QComboBox    *srCount;
     QComboBox    *outTime;
+    QComboBox    *fPort;
+
     QLabel       *portTestLabel;
     QPushButton  *testPortBtn;
 
@@ -60,8 +62,7 @@ private:
 private:
     bool  findON  = true;     //是否通过 MAC 查找厂商
 
-    int srCount_i  = 1;
-    int outTime_i  = 250;
+
 
     void initValue();
 

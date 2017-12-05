@@ -527,11 +527,13 @@ CMakeFiles/ELANTool.dir/LanIPListView.cpp.o: /usr/include/x86_64-linux-gnu/qt5/Q
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../GCArp.h
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../GCIP.h
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../GCListView.h
+CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../GCSocketPortTest.h
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../LanIPListView.h
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../ListThread.cpp
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../ListThread.h
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../QCTools.h
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: ../TableRecord.h
+CMakeFiles/ELANTool.dir/ListThread.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QList
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QString
 CMakeFiles/ELANTool.dir/ListThread.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/QThread

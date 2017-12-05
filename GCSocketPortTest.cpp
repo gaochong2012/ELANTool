@@ -14,7 +14,7 @@ int GCSocketPortTest::TestTCPConnectPort( char* IP ,int port  ){
     //printf( "TestTCPConnectPort: %s:%d\n" ,IP,port  );
 
     int client_sockfd;
-    int len = 0;
+    int ccc = 0;
 
     struct sockaddr_in remote_addr;
     //char buf[BUFSIZ];
@@ -30,21 +30,21 @@ int GCSocketPortTest::TestTCPConnectPort( char* IP ,int port  ){
     }
 
     struct timeval tv;
-    tv.tv_sec = 10;
-    tv.tv_usec = 100;
-    setsockopt( client_sockfd , SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
-
+    tv.tv_sec = 0;
+    tv.tv_usec = 250;
+    //SO_SNDTIMEO
+    setsockopt( client_sockfd , SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));
     if( connect( client_sockfd,( struct sockaddr * )&remote_addr,sizeof(struct sockaddr) )<0 ) {
 
         perror( "connect error" );
-        return -2;
+        ccc = -2;
     }
 
     //printf("connected to server/n");
 
     close(client_sockfd);
 
-    return 0;
+    return ccc;
 
 
 }
@@ -71,7 +71,8 @@ int GCSocketPortTest::TestUDPSendPort( char* IP ,int port  ){
     struct timeval tv;
     tv.tv_sec = 0;
     tv.tv_usec = 200; /** 超时*/
-    setsockopt( client_sockfd , SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
+
+    setsockopt( client_sockfd , SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));
 
     strcpy( buf,"This is a test message" );
 
@@ -79,7 +80,7 @@ int GCSocketPortTest::TestUDPSendPort( char* IP ,int port  ){
 
     if( ( len = sendto( client_sockfd,buf,strlen(buf),0,(struct sockaddr *)&remote_addr,sizeof( struct sockaddr ) ) ) < 0 ) {
         perror("recvfrom");
-        return -2;
+        //return -2;
     }
 
     close(client_sockfd);
