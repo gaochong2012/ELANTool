@@ -245,11 +245,21 @@ void MainWindow::initValue(){
     srCount->addItem( "4" ,"3" );
     srCount->setCurrentIndex(0);
     srCount->currentIndexChanged( 0 );
-
+/**
+    135/TCP
+    135/UDP
+    137/UDP
+    138/UDP
+    139/TCP
+    445/TCP
+    445/UDP
+**/
     fPort->addItem( "不进行" ,"-9999" );
-    fPort->addItem( "22" ,"22" );
-    fPort->addItem( "80" ,"80" );
-    fPort->addItem( "3389" ,"3389" );
+    fPort->addItem( "135:tcp" ,"135:tcp" );
+    fPort->addItem( "137:udp" ,"137:udp" );
+    fPort->addItem( "138:udp" ,"138:udp" );
+    fPort->addItem( "139:udp" ,"139:udp" );
+    fPort->addItem( "445:tcp" ,"445:tcp" );
     fPort->setCurrentIndex(0);
     fPort->currentIndexChanged( 0 );
 
@@ -302,10 +312,28 @@ void MainWindow::TestLan2(){
     /** 地址段总数　*/
     int count = testIP->IP2Count( sip_pchar ,dip_pchar  );
 
+    /** 重试次数 超时时间*/
     int srCount_i  = srCount->currentData().toInt();
     int outTime_i  = outTime->currentData().toInt();
 
-    int fPort_i = fPort->currentData().toInt();
+    /** 同步嗅探端口 协议*/
+    QString fPortStr = fPort->currentData().toString();
+
+    QStringList mfPort =  fPortStr.split(":");
+    int fPort_i = -9999;
+    int fPortType = 0;
+    if ( mfPort.size() == 2 ){
+        fPort_i = mfPort.at(0).toInt(NULL,10);
+        QString protType = ( QString )mfPort.at(1);
+
+        if ( protType == "tcp" ){
+            fPortType = 1;
+        }else{
+            fPortType = 2;
+        }
+
+    }
+
 
     /** 准备参数　*/
     struct TLanNetList *tlanNetList = new TLanNetList;
@@ -316,7 +344,7 @@ void MainWindow::TestLan2(){
     strcpy( tlanNetList->DIP ,dip_pchar );
 
     /** 创建一个新的线程　*/
-    ListThread *listThread = new ListThread( tlanNetList , srCount_i , outTime_i ,fPort_i );
+    ListThread *listThread = new ListThread( tlanNetList , srCount_i , outTime_i ,fPort_i ,fPortType );
     listThread->start();
 
     /** 监听线程发送　notify　消息，由主线程更新主界面*/
@@ -334,7 +362,6 @@ void MainWindow::TestLan2(){
             label3->setText( "共探测到 "+ QString::number( okCount ) +" 台设备" );
         }
     });
-
 
 }
 
@@ -442,6 +469,16 @@ void MainWindow::PortListViewItemDBClick( QModelIndex modelIndex ){
 void MainWindow::setSSPort(QList<PortData> SSPort) {
 
     this->SSPort =  SSPort;
+
+    if(  this->SSPort.size() >0 ){
+
+        fPort->clear();
+        fPort->addItem( "不进行" ,"-9999" );
+
+        foreach( PortData t , this->SSPort ){
+            fPort->addItem( t.port +":"+ t.Protocol ,t.port +":"+ t.Protocol);
+        }
+    }
 
 }
 

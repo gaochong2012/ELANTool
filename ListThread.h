@@ -37,9 +37,10 @@ private:
     int srCount  = 1;
     int outTime  = 250;
     int fPort    = -9999;
+    int fPortType = 1;
 
 public:
-    ListThread( TLanNetList* tLanNetList, int srCount  = 1 ,int outTime  = 250, int fPort = -9999, QObject *parent = nullptr );
+    ListThread( TLanNetList* tLanNetList, int srCount  = 1 ,int outTime  = 250, int fPort = -9999,int fPortType = 1, QObject *parent = nullptr );
 
     virtual ~ListThread();
 

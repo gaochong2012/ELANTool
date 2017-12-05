@@ -8,14 +8,18 @@
 #include "GCSocketPortTest.h"
 #include <QDebug>
 
-ListThread::ListThread( TLanNetList* tLanNetList, int srCount ,int outTime ,int fPort , QObject *parent ):QThread(parent) {
+ListThread::ListThread( TLanNetList* tLanNetList, int srCount ,int outTime ,int fPort,int fPortType , QObject *parent ):QThread(parent) {
 
     this->tLanNetList = (TLanNetList*)malloc( sizeof( TLanNetList ) );
     memcpy( this->tLanNetList ,tLanNetList ,sizeof( TLanNetList ) );
 
     this->srCount = srCount;
     this->outTime = outTime;
+
     this->fPort = fPort;
+    this->fPortType = fPortType;
+
+
 }
 
 
@@ -60,13 +64,26 @@ void ListThread::run() {
 
             if( this->fPort != -9999 ){
 
-                 if(  testSocket->TestTCPConnectPort(  nip,fPort   ) == 0 ){
+                if(  this->fPortType == 1   ){
 
-                     qDebug() << " =============>"  << nip << ":" << fPort << " OK";
-                     /**
-                      * 向主线程发送消息 ( 探测结果　)*/
-                     emit notify( ltRecord );
-                 }
+                    /** TCP **/
+                    if(  testSocket->TestTCPConnectPort(  nip,fPort   ) == 0 ){
+
+                        qDebug() << " ======= TCP ======>"  << nip << ":" << fPort << " OK";
+                        emit notify( ltRecord );
+                    }
+
+                }else{
+
+                    /** UDP **/
+                    if(  testSocket->TestUDPSendPort(  nip,fPort   ) == 0 ){
+
+                        qDebug() << " ======== UDP =====>"  << nip << ":" << fPort << " OK";
+                        emit notify( ltRecord );
+                    }
+
+                }
+
 
             }else{
 

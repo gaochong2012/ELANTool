@@ -53,7 +53,7 @@ int GCSocketPortTest::TestUDPSendPort( char* IP ,int port  ){
 
 
     int client_sockfd;
-    int len = 0;
+    int ccc = 0;
 
     struct sockaddr_in remote_addr;
     int sin_size = 0;
@@ -75,16 +75,22 @@ int GCSocketPortTest::TestUDPSendPort( char* IP ,int port  ){
     setsockopt( client_sockfd , SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));
 
     strcpy( buf,"This is a test message" );
+    int bufsize = strlen(buf);
 
-    //sin_size = sizeof( struct sockaddr_in );
+    int len = sendto( client_sockfd,buf,bufsize,0,(struct sockaddr *)&remote_addr,sizeof( struct sockaddr ) );
+    if(  len != bufsize ) {
 
-    if( ( len = sendto( client_sockfd,buf,strlen(buf),0,(struct sockaddr *)&remote_addr,sizeof( struct sockaddr ) ) ) < 0 ) {
+        printf( "************************* UDP sendto error *%s************************************\n" , IP);
         perror("recvfrom");
-        //return -2;
+        ccc = -2;
+
+    }else{
+
+        ccc = 0;
     }
 
     close(client_sockfd);
 
-    return 0;
+    return ccc;
 
 }
